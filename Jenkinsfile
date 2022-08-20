@@ -1,26 +1,24 @@
 node {
-    stages('Code Clean') {
-	    
-		sh 'mvn clean'
-	}
     stage('Code Clone') {  
-	   git branch: 'main', url: 'https://github.com/shruthimangi/ks.git'
+	   git 'https://github.com/shruthimangi/ks.git'
     }
-    stage('Maven Validate ') {
-	
-	   sh 'mvn Validate'
+	stage('Code Clean') { 
+       
+	   sh 'mvn clean'
+    }
+    stage('Maven Validate '){
+	   sh 'mvn validate'
     }
     stage('Maven Compile') {
-	
-	   sh 'mvn Compile'
+	   sh 'mvn compile'
 	}
     stage('Maven Test') {
 	
-	   sh 'mvn Test'
+      sh 'mvn test'
 	}
 	stage('Maven Package') {
 	
-	   sh 'mvn Package'
+      sh 'mvn package'
 }
 
 	}
