@@ -4,7 +4,7 @@ node {
     }
 	
 	stage ('Maven Version'){
-	     sh 'mvn --version'
+	    sh 'mvn --version'
     }
 	stage('Code Clean') { 
        
