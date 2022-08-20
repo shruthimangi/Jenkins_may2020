@@ -3,9 +3,6 @@ node {
 	   git 'https://github.com/shruthimangi/ks.git'
     }
 	
-	stage ('Maven Version'){
-	    sh 'mvn --version'
-    }
 	stage('Code Clean') { 
        
 	   sh 'mvn clean'
