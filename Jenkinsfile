@@ -1,7 +1,7 @@
 node {
     stage('Code Clone') {  
-	   git 'https://github.com/shruthimangi/ks.git'
-    }
+	   git branch: 'main', url: 'https://github.com/shruthimangi/ks.git'
+     }
 	
 	stage('Code Clean') { 
        
